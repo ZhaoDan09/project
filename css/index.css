@@ -73,7 +73,6 @@ a {
 
 /*尖括号的方向*/
 #top > ul > li > a b {
-  border: 1px solid red;
   width: 8px;
   background-image: url(../img/navCode.png);
   background-position: -8px -8px; }
@@ -867,27 +866,47 @@ footer p:nth-of-type(2) img {
 .slider-floor {
   position: fixed;
   top: 80px;
-  left: 50px;
-  border: 1px solid #000; }
-
-.slider-floor li {
-  width: 50px;
-  height: 33px;
-  border-bottom: 1px solid #ddd; }
+  left: 50px; }
 
 .slider-floor li a {
   display: block;
-  line-height: 28px;
-  text-align: center;
-  color: #000;
-  font-size: 12px;
-  height: 33px;
-  box-sizing: border-box;
-  padding: 5px 0 5px 0; }
+  width: 58px;
+  height: 32px;
+  background-image: url(../img/floor.png);
+  background-position: 0 -61px; }
 
-.slider-floor li:hover a {
-  background-color: #d41c50;
-  color: #fff; }
+.slider-floor li:nth-of-type(1) a {
+  background-position: 0 -61px; }
+
+.slider-floor li:nth-of-type(2) a {
+  background-position: 0 -94px; }
+
+.slider-floor li:nth-of-type(3) a {
+  background-position: 0 -127px; }
+
+.slider-floor li:nth-of-type(4) a {
+  background-position: 0 -159px; }
+
+.slider-floor li:nth-of-type(5) a {
+  background-position: 0 -192px; }
+
+.slider-floor li:nth-of-type(6) a {
+  background-position: -80px -220px; }
+
+.slider-floor li:nth-of-type(1):hover a {
+  background-position: -164px -60px; }
+
+.slider-floor li:nth-of-type(2):hover a {
+  background-position: -164px -92px; }
+
+.slider-floor li:nth-of-type(3):hover a {
+  background-position: -164px -122px; }
+
+.slider-floor li:nth-of-type(4):hover a {
+  background-position: -164px -155px; }
+
+.slider-floor li:nth-of-type(5):hover a {
+  background-position: -164px -188px; }
 
 /*# sourceMappingURL=mainstyle.css.map */
 
