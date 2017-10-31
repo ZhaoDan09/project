@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>注册页面</title>
 		<link rel="stylesheet" href="css/reg.css" />
 	</head>
 	<body>
@@ -66,9 +66,9 @@
 				</p>
 			</form>
 			<div id="header_right">
-				<img src="img/fuw_03.jpg"/>
-				<img src="img/fuw_05.jpg"/>
-				<img src="img/fuw_041.jpg"/>
+				<a href=""><img src="img/fuw_03.jpg"/></a>
+				<a href=""><img src="img/fuw_05.jpg"/></a>
+				<a href=""><img src="img/fuw_041.jpg"/></a>
 			</div>
 		</header>
 		</div>
@@ -321,9 +321,39 @@
 		<!---------------main--------------------->
 		<div id="main-wrap">
 				<div id="main">
-					<p></p>
-					<form action="">
-						
+					<h3>欢迎注册Z&D网站</h3>
+					<form method="post" action="regSave.php">
+						<div class="phoneId">
+							<label for="phoneNum">手机号码：</label>
+							<input type="text" id="phoneNum"/><span class="NumMsg"></span>
+						</div>
+						<div class="passId">
+							<label for="passNum">设置密码：</label>
+							<input type="password" id="passNum"/><span class="passMsg"></span>
+						</div>
+						<div class="confirmId">
+							<label for="confirmPass">确认密码：</label>
+							<input type="password" id="confirmPass"/><span class="cfMsg"></span>
+						</div>
+						<div class="verifyId">
+							<i>验证码：</i>
+							<p>
+								<input type="button" value="免费获取短信验证码 >" class="verifcode"/>
+								<input type="text" id="verifyText"/><span class="verifyMsg"></span>
+							</p>
+							<p style="display:none;">
+								<input type="text" id="verifyText"/>
+								<span id="randomNum"></span>
+								<a id="change" href="javascript:;" onclick="js_method()">换一张?</a>
+								<input type="button" value="确定发送" id="btnGo"/>
+							</p>
+						</div>
+						<input type="submit" value="提交注册 >" id="btnReg"/>
+						<div id="chexBox">
+							<input type="checkbox" checked="checked" id="checkId" style="float: left;
+	width:12px;height:12px;"/>
+							<span>我已阅读并同意 </span><a href="">《Z&D用户服务协议》</a>
+						</div>
 					</form>
 				</div>
 		</div>
@@ -331,105 +361,145 @@
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript">
+$(function(){
 	//top购物车的div
-	$(".top_right li:eq(1)").mouseover(function(){
-		$(".shopCar").css({
-			"display":"block",
-			"backgroundColor":"white",
-			"boxShadow":"0px 5px 5px #000"
+		$(".top_right li:eq(1)").mouseover(function(){
+			$(".shopCar").css({
+				"display":"block",
+				"backgroundColor":"white",
+				"boxShadow":"0px 5px 5px #000"
+			})
+			$(this).css({
+				"backgroundColor":"white",
+				"boxShadow":"0px 0px 5px #000"
+			})
 		})
-		$(this).css({
-			"backgroundColor":"white",
-			"boxShadow":"0px 5px 5px #000"
+		$(".shopCar").mousemove(function(){
+			$(this).css({
+				"display":"block"
+			})
 		})
+		$(".top_right li:eq(1)").mouseout(function(){
+			$(".shopCar").css({
+				"display":"none"
+			})
+			$(this).css({
+					"backgroundColor":"#f2f2f2",
+					"boxShadow":"none"
+			})
+		})
+		$(".shopCar").mouseout(function(){
+			$(this).css({
+				"display":"none"
+			})
+		})
+		//导航
+		$(".top_right li:eq(2)").mouseover(function(){
+			$("#nav").css({
+				"display":"block",
+				"backgroundColor":"white",
+				"boxShadow":"0px 0px 5px #000"
+			})
+			$(this).css({
+				"backgroundColor":"white",
+				"boxShadow":"0px 0px 5px #000"
+			})
+		})
+		$("#nav").mousemove(function(){
+			$(this).css({
+				"display":"block"
+			})
+		})
+		$(".top_right li:eq(2)").mouseout(function(){
+			$("#nav").css({
+				"display":"none"
+			})
+			$(this).css({
+					"backgroundColor":"#f2f2f2",
+					"boxShadow":"none"
+			})
+		})
+		$("#nav").mouseout(function(){
+			$(this).css({
+				"display":"none"
+			})
+		})
+		//全部商品
+		$(".nav li:eq(0)").mouseover(function(){
+			$("#list").css({
+				"display":"block"
+			})
+		})
+		$(".nav li:eq(0)").mouseout(function(){
+			$("#list").css({
+				"display":"none"
+			})
+		})
+		$("#list").mouseover(function(){
+				$(this).css('display','block');
+			})
+		$("#list").mouseout(function(){
+				$(this).css('display','none');
+			})
+		let $mainMenu=$("#list").find("li");
+		let $subMenu=$(".submenu");
+		$mainMenu.each(function(){
+			let index = $mainMenu.index($(this));
+			$mainMenu.eq(index).mouseover(function(){
+				$subMenu.eq(index).css('display','block');
+			})
+			$mainMenu.eq(index).mouseout(function(){
+				$subMenu.eq(index).css('display','none');
+			})
+		})
+		$subMenu.each(function(){
+			let index = $subMenu.index($(this));
+			$(this).mouseover(function(){
+				$(this).css('display','block');
+				$("#list").css('display','block');
+			})
+			$(this).mouseout(function(){
+				$(this).css('display','none');
+				$("#list").css('display','none');
+			})
+		})
+		//注册页面，当input框获取焦点时盒子阴影
+		let $inputDom=$("#main").find("input");
+		$inputDom.each(function(){
+			$(this).focus(function(){
+				$(this).css({"boxShadow":"0px 0px 10px #ff8080"});
+			})
+		})
+		$inputDom.each(function(){
+			$(this).blur(function(){
+				$(this).css({"boxShadow":"none"});
+			})
+		})
+		//第四个input框
+		$inputDom.eq(3).focus(function(){
+			$(this).css({"boxShadow":"none"})
+		})
+		let $p=$(".verifyId").find("p");
+		$(".verifcode").click(function(){
+			$p.eq(0).css({"display":"none"});
+				$p.eq(1).css({"display":"block"});
+			})
+	//手机号码进行验证(是否重复)
+	$("#phoneNum").blur(function(){
+		$.ajax({
+			type:"get",
+			url:"php/regCheck.php",
+			async:true,
+			data:"phoneNum="+this.value();
+			success:function(data){
+				if(data==1){
+					$(".NumMsg").html("号码已经申请，请重新输入");
+				}else{
+					$(".NumMsg").html("号码可使用");
+				}
+			}
+		});
 	})
-	$(".shopCar").mousemove(function(){
-		$(this).css({
-			"display":"block"
-		})
-	})
-	$(".top_right li:eq(1)").mouseout(function(){
-		$(".shopCar").css({
-			"display":"none"
-		})
-		$(this).css({
-				"backgroundColor":"#f2f2f2",
-				"boxShadow":"none"
-		})
-	})
-	$(".shopCar").mouseout(function(){
-		$(this).css({
-			"display":"none"
-		})
-	})
-	//导航
-	$(".top_right li:eq(2)").mouseover(function(){
-		$("#nav").css({
-			"display":"block",
-			"backgroundColor":"white",
-			"boxShadow":"0px 5px 5px #000"
-		})
-		$(this).css({
-			"backgroundColor":"white",
-			"boxShadow":"0px 5px 5px #000"
-		})
-	})
-	$("#nav").mousemove(function(){
-		$(this).css({
-			"display":"block"
-		})
-	})
-	$(".top_right li:eq(2)").mouseout(function(){
-		$("#nav").css({
-			"display":"none"
-		})
-		$(this).css({
-				"backgroundColor":"#f2f2f2",
-				"boxShadow":"none"
-		})
-	})
-	$("#nav").mouseout(function(){
-		$(this).css({
-			"display":"none"
-		})
-	})
-	//全部商品
-	$(".nav li:eq(0)").mouseover(function(){
-		$("#list").css({
-			"display":"block"
-		})
-	})
-	$(".nav li:eq(0)").mouseout(function(){
-		$("#list").css({
-			"display":"none"
-		})
-	})
-	$("#list").mouseover(function(){
-			$(this).css('display','block');
-		})
-	$("#list").mouseout(function(){
-			$(this).css('display','none');
-		})
-	let $mainMenu=$("#list").find("li");
-	let $subMenu=$(".submenu");
-	$mainMenu.each(function(){
-		let index = $mainMenu.index($(this));
-		$mainMenu.eq(index).mouseover(function(){
-			$subMenu.eq(index).css('display','block');
-		})
-		$mainMenu.eq(index).mouseout(function(){
-			$subMenu.eq(index).css('display','none');
-		})
-	})
-	$subMenu.each(function(){
-		let index = $subMenu.index($(this));
-		$(this).mouseover(function(){
-			$(this).css('display','block');
-			$("#list").css('display','block');
-		})
-		$(this).mouseout(function(){
-			$(this).css('display','none');
-			$("#list").css('display','none');
-		})
-	})
+})
+	
 </script>

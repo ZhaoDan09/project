@@ -477,7 +477,123 @@ header > form > p > a:hover {
   padding: 20px 0; }
 
 #main {
-  height: 452px;
+  height: 420px;
   background-color: #fff; }
+
+#main h3 {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  line-height: 42px;
+  font-weight: 900;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc; }
+
+#main form {
+  color: #4e4e4e;
+  width: 100%;
+  height: 370px;
+  box-sizing: border-box;
+  padding-top: 45px;
+  padding-left: 240px; }
+
+#main form div {
+  width: auto;
+  height: 32px;
+  margin-bottom: 16px; }
+
+#main form div label {
+  float: left;
+  width: 87px;
+  line-height: 32px; }
+
+#main form div input {
+  width: 221px;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  border: 1px solid #e1e1e1; }
+
+#main form .verifyId i {
+  float: left;
+  width: 71px;
+  line-height: 32px;
+  padding-left: 16px;
+  font-style: normal; }
+
+#main form .verifyId .verifcode {
+  float: left;
+  width: 148px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  background-color: #87b93c;
+  margin-top: 1px;
+  margin-right: 3px; }
+
+#main form .verifyId .verifcode:hover {
+  text-decoration: underline; }
+
+#main form .verifyId #verifyText {
+  float: left;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  border: 1px solid #e1e1e1; }
+
+#main form .verifyId p:nth-of-type(2) #randomNum {
+  float: left;
+  width: 110px;
+  height: 30px;
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 900;
+  margin-left: 3px;
+  margin-right: 3px;
+  border: 1px solid #e1e1e1; }
+
+#main form .verifyId p:nth-of-type(2) a {
+  color: #FF0000;
+  line-height: 32px; }
+
+#main form .verifyId p:nth-of-type(2) a:hover {
+  text-decoration: underline; }
+
+#main form .verifyId p:nth-of-type(2) #btnGo {
+  width: 70px;
+  height: 28px;
+  background-color: #FF0000;
+  color: #fff;
+  margin-top: 2px; }
+
+#main form #btnReg {
+  width: 96px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  display: block;
+  margin-left: 87px;
+  border: 0;
+  background-color: #ff0000;
+  margin-bottom: 12px; }
+
+#chexBox {
+  margin-left: 88px;
+  line-height: 30px; }
+
+#chexBox #checkId {
+  margin-top: 10px;
+  margin-right: 5px; }
+
+#chexBox a {
+  color: #d41c4f; }
+
+#chexBox a:hover {
+  text-decoration: underline; }
+
+/**********注册页面，当input框获取焦点时盒子阴影***********************/
 
 /*# sourceMappingURL=reg.css.map */
