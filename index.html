@@ -12,10 +12,10 @@
 		<div id="top-wrap">
 			<div id="top">
 				<div id="top-left">
-					<span>您好，欢迎来到Z&D!</span>
+					<span>您好，欢迎<b id="user"></b>用户来到Z&D!</span>
 					<span>
 						【<a href="login.html">登录  </a>|
-						<a href="reg.html">注册</a>】
+						<a href="reg.html">注册</a> | <a href="login.html" id="dele">退出</a>】
 					</span>
 				</div>
 				<ul>
@@ -91,10 +91,10 @@
 			<div id="menu">
 				<div id="menu_1">全部商品</div>
 				<ul class="nav">
-					<li><a href="">首页</a></li>
+					<li style="background-color:#a21e43;"><a href="">首页</a></li>
 					<li><a href="">新品</a></li>
 					<li><a href="">真皮</a></li>
-					<li><a href="">选包</a></li>
+					<li><a href="goodslist.html">选包</a></li>
 				</ul>
 				<div><span>&#xe624;</span><a href="">手机版</a></div>
 				<!-----商品列表----->
@@ -167,7 +167,7 @@
 						</p>
 						<!------第四个商品li对应的div----->
 					</li>
-						<a class="list_more" href="">查看更多包包&gt;&gt;</a>
+						<a class="list_more" href="goodslist.html">查看更多包包&gt;&gt;</a>
 				</ul>
 				<!---------当鼠标滑过Li时相对应的div列表------------->
 				<!--第一个div-->
@@ -955,149 +955,5 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/index_banner.js" ></script>
 <script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
-<script type="text/javascript">
-//1）轮播
-var arr=['双面佳人','趣味baob','旅行途中','少女环游','幸运许愿']
-var mySwiper = new Swiper ('.swiper-container', {
-  	 autoplay: 2000,
-    loop: true,
-    autoplayDisableOnInteraction :false,
-    //effect : 'cube',
-    effect : 'coverflow',
-	paginationClickable: true,
-    // 如果需要分页器
-    pagination: '.swiper-pagination',
-    
-    // 如果需要前进后退按钮
-    //nextButton: '.swiper-button-next',
-  	//prevButton: '.swiper-button-prev',
-    paginationBulletRender: function (swiper, index, className) {
-      return '<li class="' + className + '">' + /*(index + 1)+*/arr[index]+ '</li>';
-  }
- }) 
- 
-	//2）右下角回到顶部
-	$(window).scroll(function () {
-		if ($(document).scrollTop()>=1000) {
-			$(".f_r").css({"display":"block"});
-		}else{
-			$(".f_r").css({"display":"none"});
-		}
-	})
-	$(".f_r").click(function(){
-		$('body').animate({scrollTop:0},10);  
-	})
-	
-	//3）
-	$(function(){
-		//banner轮播
-		new Slider({
-			$boxDom:$("#banner"),
-			width:document.body.clientWidth  || document.documentElement.clientWidth ,
-			height:440,
-			imgs:["img/ban1.jpg","img/ban2.jpg","img/ban3.jpg","img/ban4.jpg","img/ban5.jpg"],
-			currOrd:1,
-			timeSpace:3000,
-			btn:{
-				width:20,
-				height:20,
-				color:"#666",
-				highColor:"#d41c50",
-				right:300,
-				bottom:20,
-				isCricle:true
-			}
-		});
-		//滑过list01_04 对应的list1-4 display:block;同时判断鼠标悬停在list-4上时
-		$(".list01").mouseover(function(){
-			$(".list1").css({"display":"block",});
-		})
-		$(".list01").mouseout(function(){
-			$(".list1").css({"display":"none"});
-		})
-		$(".list1").mouseover(function(){
-			$(this).css({"display":"block"});
-		})
-		
-		$(".list1").mouseout(function(){
-			$(this).css({"display":"none"});
-		})
-		//2list
-		$(".list02").mouseover(function(){
-			$(".list2").css({"display":"block"});
-		})
-		$(".list02").mouseout(function(){
-			$(".list2").css({"display":"none"});
-		})
-		$(".list2").mouseover(function(){
-			$(this).css({"display":"block"});
-		})
-		$(".list2").mouseout(function(){
-			$(this).css({"display":"none"});
-		})
-		//3list
-		$(".list03").mouseover(function(){
-			$(".list3").css({"display":"block"});
-		})
-		$(".list03").mouseout(function(){
-			$(".list3").css({"display":"none"});
-		})
-		$(".list3").mouseover(function(){
-			$(this).css({"display":"block"});
-		})
-		$(".list3").mouseout(function(){
-			$(this).css({"display":"none"});
-		})
-		//4list
-		$(".list04").mouseover(function(){
-			$(".list4").css({"display":"block"});
-		})
-		$(".list04").mouseout(function(){
-			$(".list4").css({"display":"none"});
-		})
-		$(".list4").mouseover(function(){
-			$(this).css({"display":"block"});
-		})
-		$(".list4").mouseout(function(){
-			$(this).css({"display":"none"});
-		})
-		//锚记
-		$(window).scroll(function () {
-		if ($(document).scrollTop()>=650) {
-			$(".slider-floor").css({"display":"block"});
-		}else{
-			$(".slider-floor").css({"display":"none"});
-		}
-	})
-		let $p=$(".foot_right").find("p");
-			$p.css({
-				"width":235,
-				"height":257,
-				"position":"absolute",
-				"left":-235,
-				"top":0,
-				"display":"none"
-			})
-			//右下角LI划过时二维码出现
-			$(".fourth").mouseover(function(){
-				$p.css({
-					"display":"block"
-				})
-			})
-			$p.mouseover(function(){
-				$(this).css({
-					"display":"block"
-				})
-			})
-			$p.mouseout(function(){
-				$(this).css({
-					"display":"none"
-				})
-			})
-			$(".fourth").mouseout(function(){
-				$p.css({
-					"display":"none"
-				})
-			})
-});
-</script>
+<script type="text/javascript" src="js/cookietools.js"></script>
+<script type="text/javascript" src="js/index.js"></script>

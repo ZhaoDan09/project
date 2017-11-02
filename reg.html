@@ -322,24 +322,24 @@
 		<div id="main-wrap">
 				<div id="main">
 					<h3>欢迎注册Z&D网站</h3>
-					<form method="post" action="regSave.php">
+					<div id="form">
 						<div class="phoneId">
 							<label for="phoneNum">手机号码：</label>
-							<input type="text" id="phoneNum"/><span class="NumMsg"></span>
+							<input type="text" id="phoneNum" class="inputInfo"/><span class="NumMsg Info"></span>
 						</div>
 						<div class="passId">
 							<label for="passNum">设置密码：</label>
-							<input type="password" id="passNum"/><span class="passMsg"></span>
+							<input type="password" id="passNum"  class="inputInfo"/><span class="passMsg Info"></span>
 						</div>
 						<div class="confirmId">
 							<label for="confirmPass">确认密码：</label>
-							<input type="password" id="confirmPass"/><span class="cfMsg"></span>
+							<input type="password" id="confirmPass"  class="inputInfo"/><span class="cfMsg Info"></span>
 						</div>
 						<div class="verifyId">
 							<i>验证码：</i>
 							<p>
 								<input type="button" value="免费获取短信验证码 >" class="verifcode"/>
-								<input type="text" id="verifyText"/><span class="verifyMsg"></span>
+								<input type="text" id="verifyText"  class="inputInfo"/><span class="verifyMsg Info"></span>
 							</p>
 							<p style="display:none;">
 								<input type="text" id="verifyText"/>
@@ -348,18 +348,19 @@
 								<input type="button" value="确定发送" id="btnGo"/>
 							</p>
 						</div>
-						<input type="submit" value="提交注册 >" id="btnReg"/>
+						<input type="button" value="提交注册 >" id="btnReg"/><span class="regMsg Info"></span>
 						<div id="chexBox">
 							<input type="checkbox" checked="checked" id="checkId" style="float: left;
 	width:12px;height:12px;"/>
 							<span>我已阅读并同意 </span><a href="">《Z&D用户服务协议》</a>
 						</div>
-					</form>
+					</div>
 				</div>
 		</div>
 	</body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="js/reg.js"></script>
 <script type="text/javascript">
 $(function(){
 	//top购物车的div
@@ -463,43 +464,7 @@ $(function(){
 				$("#list").css('display','none');
 			})
 		})
-		//注册页面，当input框获取焦点时盒子阴影
-		let $inputDom=$("#main").find("input");
-		$inputDom.each(function(){
-			$(this).focus(function(){
-				$(this).css({"boxShadow":"0px 0px 10px #ff8080"});
-			})
-		})
-		$inputDom.each(function(){
-			$(this).blur(function(){
-				$(this).css({"boxShadow":"none"});
-			})
-		})
-		//第四个input框
-		$inputDom.eq(3).focus(function(){
-			$(this).css({"boxShadow":"none"})
-		})
-		let $p=$(".verifyId").find("p");
-		$(".verifcode").click(function(){
-			$p.eq(0).css({"display":"none"});
-				$p.eq(1).css({"display":"block"});
-			})
-	//手机号码进行验证(是否重复)
-	$("#phoneNum").blur(function(){
-		$.ajax({
-			type:"get",
-			url:"php/regCheck.php",
-			async:true,
-			data:"phoneNum="+this.value();
-			success:function(data){
-				if(data==1){
-					$(".NumMsg").html("号码已经申请，请重新输入");
-				}else{
-					$(".NumMsg").html("号码可使用");
-				}
-			}
-		});
-	})
+		
 })
 	
 </script>

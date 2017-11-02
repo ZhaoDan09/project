@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/goodslist.css" />
+		<style type="text/css">
+			#goodsBox{
+				width:999px;
+				height:auto;
+				overflow: hidden;
+			    box-sizing: border-box;
+			    padding-left:5px;
+			}
+			#goodsBox li{
+				float:left;
+				width:25%;
+				height:314px;
+				overflow:hidden;
+				text-align:center;
+			}
+			#goodsBox li img{
+				display:block;
+				margin:30px 35px;
+			}
+			#goodsBox li a{
+				color:#666;
+				line-height:20px;
+			}
+			#goodsBox li a:hover{
+				color:red;
+				text-decoration: underline;
+			}
+			#goodsBox li b:nth-of-type(1){
+				color:#d41c4f;
+				font-weight: 900;
+				margin-right:10px;
+			}
+			#goodsBox li b:nth-of-type(2){
+				color:#b0b0b0;
+				font-weight:500;
+				text-decoration: line-through;
+			}
+		</style>
+	</head>
+	<body>
+		<!-----------top------------------>
+		<div id="top-wrap">
+			<div id="top">
+				<div class="top_left">
+					<span>您好，欢迎<b id="user"></b>来到Z&D</span>
+					【<a href="">登录</a>  |
+					<a href="">注册</a>   | <a href="login.html">退出</a>】<!------记得写删除cookie-------->
+				</div>
+				<ul class="top_right">
+					<li><a href="">我的订单</a></li>
+					<li>
+						<a href=""><span></span>购物车<b>0</b><i></i></a>
+					</li>
+					<li style=" border:0;"><a href=""><span></span>导航<i></i></a></li>
+					
+					<div class='shopCar'><a href="" style="color:#666;">您的购物车中没有商品，先去选购吧！</a></div>
+				</ul>
+				<ul id="nav">
+							<li>
+								<h3>热门</h3>
+								<a href="">周日上新</a>
+								<a href="">爆款推荐</a>
+								<a href="">选包中心</a>
+							</li>
+							<li>
+								<h3>购物</h3>
+								<a href="">女包馆</a>
+								<a href="">男包馆</a>
+								<a href="">运动中心</a>
+							</li>
+							<li>
+								<h3>服务</h3>
+								<a href="">新手帮忙</a>
+								<a href="">帮助中心</a>
+								<a href="">小助理</a>
+							</li>
+							<li id="Call">&nbsp;服务热线：4008888888</li>
+						</ul>
+			</div>
+		</div>
+		<!------------header------------------>
+		<div id="header">
+			<header>
+			<h1>
+				<img src="img/logo.png"/>
+			</h1>
+			<form>
+				<div id="Searchtext">
+					<input id="SearchId" placeholder="搜索时尚包包试试~"/>
+				</div>
+				<div id="Searchbtn"><input type="button"  value="搜索"/></div>
+				<p>
+					<a href="">潮流双肩包</a>|
+					<a href="">甜美韩风</a>|
+					<a href="">品质真品</a>|
+					<a href="">绅士公文</a>|
+					<a href="">拉杆箱</a>
+				</p>
+			</form>
+			<div id="header_right">
+				<a href=""><img src="img/fuw_03.jpg"/></a>
+				<a href=""><img src="img/fuw_05.jpg"/></a>
+				<a href=""><img src="img/fuw_041.jpg"/></a>
+			</div>
+		</header>
+		</div>
+		
+		<!--------------menu-------------------->
+		<div id="menu-wrap">
+			<div id="menu">
+				<ul class="nav">
+					<li>全部商品 <span></span>
+					</li>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="">新品</a></li>
+					<li><a href="">真皮</a></li>
+					<li style="background-color:#a21e43;"><a href="">选包</a></li>
+				</ul>
+				<a class="phone" href=""><span></span>手机版</a>
+				<!-----商品列表----->
+					<ul id="list" style="z-index:5 ;">
+						<li class="list01">
+							<p>
+								<i></i>
+								<a href="">潮流女包</a>/
+								<a href="">真皮女包</a>
+								<span></span>
+							</p>
+							<p>
+								<a href="">手提包</a>
+								<a href="">单肩包</a>
+								<a href="">斜挎包</a>
+								<a href="">钱包手包</a><br />
+								<a href="">真皮包</a>
+								<a href="">双肩包</a>
+								<a style="color:#ca224e;" href="">结婚季</a>
+							</p>
+							<!------第一个商品li对应的div----->
+							
+						</li>
+						<li class="list02">
+							<p>
+								<i></i>
+								<a href="">绅士男包</a>
+								<span></span>
+							</p>
+							<p>
+								<a href="">真皮包</a>
+								<a href="">单肩包</a>
+								<a href="">双肩包</a>
+								<a href="">手提包</a><br/>
+								<a href="">斜挎包</a>
+								<a href="">钱包/手包</a>
+								<a href="">胸包</a>
+							</p>
+							<!------第二个商品li对应的div----->
+							
+						</li>
+						<li class="list03">
+							<p>
+								<i></i>
+								<a href="">运动</a>/
+								<a href="">旅行</a>
+								<span></span>
+							</p>
+							<p>
+								<a href="">双肩包</a>
+								<a href="">拉杆箱</a>
+								<a href="">户外功能包</a><br />
+								<a href="">休闲包</a>
+							</p>
+							<!------第三个商品li对应的div----->
+							<!---------当鼠标滑过Li时相对应的div列表------------->
+					
+						</li>	
+						<li class="list04">
+							<p>
+								<i></i>
+								<a href="">其他箱包</a>
+								<span></span>
+							</p>
+							<p style="border-bottom:0;">
+								<a href="">妈咪包</a>
+								<a href="">儿童包</a>
+								<a href="">书包</a>
+								<a href="">配件</a>
+							</p>
+							<!------第四个商品li对应的div----->
+						</li>
+							<a class="list_more" href="">查看更多包包&gt;&gt;</a>
+					</ul>
+					<div id="subMenu">
+							<!---------li相对的子菜单------------>
+						<!---------当鼠标滑过Li时相对应的div列表------------->
+							<!--第一个div-->
+							<div class="list_1 submenu" style="display: none;">
+								<div><b>品牌</b><a href="">更多女包品牌&gt;&gt;</a></div>
+								<ul class="list_1f">
+									<li><a href=""><img src="img/mbaobao.jpg" alt="" /><span>Z&D</span></a></li>
+									<li><a href=""><img src="img/mplus.jpg"/><span>M plus</span></a></li>
+									<li><a href=""><img src="img/lm.jpg"/><span>浪美</span></a></li>
+									<li><a href=""><img src="img/af.jpg"/><span>阿尔法</span></a></li>
+									<li><a href=""><img src="img/Clous-Krause.jpg"/><span>Clous-Krause</span></a></li>
+								</ul>
+								<ul class="list_1fs">
+									<li>
+										<b>热门推荐:</b>
+										<a href="">贝壳包</a>
+										<a href="">小方包</a>
+										<a href="">链条包</a>
+										<a href="">水桶包</a>
+										<a href="">托特包</a>
+										<a href="">小猪包</a><br />
+										<a href="">格纹包</a>
+										<a href="">菱格包</a>
+									</li>
+									<li>
+										<b>按价格:</b>
+										<a href="">199以下</a>
+										<a href="">200-299</a>
+										<a href="">300-599</a>
+										<a href="">600-999</a>
+										<a href="">1000以上</a>
+									</li>
+									<li>
+										<b>按主材质:</b>
+										<a href="">真皮</a>
+										<a href="">合成革</a>
+										<a href="">二层牛皮</a>
+										<a href="">羊皮</a>
+										<a href="">尼龙</a>
+										<a href="">帆布</a>
+									</li>
+									<li>
+										<b>按颜色:</b>
+										<a href="">黑色</a>
+										<a href="">粉色</a>
+										<a href="">杏色</a>
+										<a href="">蓝色</a>
+										<a href="">白色</a>
+										<a href="">红色</a>
+										<a href="">橘色</a>
+									</li>
+									<li>
+										<b>按尺码:</b>
+										<a href="">迷你包(可放手机)</a>
+										<a href="">小包(可放iPad mini)</a><br />
+										<a href="">中包可放(ipad)</a>
+										<a href="">大包(可放A4纸)</a>
+										<a href="">超大容量</a>
+									</li>
+								</ul>
+							</div>
+							<!---------当鼠标滑过Li时相对应的div列表------------->
+							<!--第二个div-->
+							<div class="list_1 submenu" style="display: none;">
+								<div><b>品牌</b><a href="">更多男包品牌&gt;&gt;</a></div>
+								<ul class="list_1f">
+									<li><a href=""><img src="img/gb2.jpg" alt="" /><span>格尔本</span></a></li>
+								</ul>
+								<ul class="list_1fs">
+									<li>
+										<b>热门产品:</b>
+										<a href="">公文包</a>
+										<a href="">电脑包</a>
+										<a href="">休闲包</a>
+									</li>
+									<li>
+										<b>按价格:</b>
+										<a href="">199以下</a>
+										<a href="">200-299</a>
+										<a href="">300-599</a>
+										<a href="">600-999</a>
+										<a href="">1000以上</a>
+									</li>
+									<li>
+										<b>按主材质:</b>
+										<a href="">真皮</a>
+										<a href="">合成革</a>
+										<a href="">二层牛皮</a>
+										<a href="">尼龙</a>
+									</li>
+									<li>
+										<b>按颜色:</b>
+										<a href="">黑色</a>
+										<a href="">蓝色</a>
+										<a href="">棕色</a>
+									</li>
+									<li>
+										<b>按尺码:</b>
+										<a href="">小包(可放iPad mini)</a>
+										<a href="">中包可放(ipad)</a><br />
+										<a href="">大包(可放A4纸)</a>
+									</li>
+								</ul>
+							</div>
+							<!--第三个div-->
+							<div class="list_1 submenu" style="display:none;">
+								<div><b>品牌</b><a href="">更多运动包品牌&gt;&gt;</a></div>
+								<ul class="list_1f">
+									<li><a href=""><img src="img/sp2.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/delsey.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/ego.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/rimowa.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/xxl.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/jansport2.jpg" alt="" /><span>格尔本</span></a></li>
+								</ul>
+								<ul class="list_1fs">
+									<li>
+										<b>热门产品:</b>
+										<a href="">登山包</a>
+										<a href="">旅行包</a>
+										<a href="">拉杆硬箱</a>
+									</li>
+									<li>
+										<b>按价格:</b>
+										<a href="">199以下</a>
+										<a href="">200-299</a>
+										<a href="">300-599</a>
+										<a href="">600-999</a>
+										<a href="">1000以上</a>
+									</li>
+									<li>
+										<b>按主材质:</b>
+										<a href="">真皮</a>
+										<a href="">合成革</a>
+										<a href="">二层牛皮</a>
+										<a href="">尼龙</a>
+										<a href="">二层牛皮</a>
+										<a href="">尼龙</a>
+									</li>
+								</ul>
+							</div>
+							<!---------当鼠标滑过Li时相对应的div列表------------->
+							<!--第四个div-->
+							<div class="list_1 submenu" style="display: none;">
+								<div><b>品牌</b><a href="">其他箱包&gt;&gt;</a></div>
+								<ul class="list_1f">
+									<li><a href=""><img src="img/sp2.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/delsey.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/ego.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/rimowa.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/xxl.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/jansport2.jpg" alt="" /><span>格尔本</span></a></li>
+									<li><a href=""><img src="img/jansport2.jpg" alt="" /><span>格尔本</span></a></li>
+								</ul>
+								<ul class="list_1fs">
+								</ul>
+							</div>
+					</div>
+			</div>
+		</div>
+		<!------------------------总计购买件数------------------------->
+		<div id="Count">
+			<b>选包中心:</b>共有 <span>529</span>件商品供您选购
+		</div>
+		<!-----------------------列表展示区（main）---------------------------------->
+		<div id="main">
+			<!---------左侧菜单---------------->
+			<aside>
+				<span>请设置筛选条件：</span>
+				<ul class="First">
+					<li class="list1">
+						<b>分类 </b>
+						<ul class="Second">
+							<li class="list2"><a href="">真皮女包</a></li>
+							<li class="list2"><a href="">潮流女包</a></li>
+							<li class="list2"><a href="">绅士男包</a></li>
+							<li class="list2"><a href="">海外大牌</a></li>
+							<li class="list2"><a href="">运动包</a></li>
+							<li class="list2"><a href="">拉杆箱</a></li>
+							<li class="list2"><a href="">儿童包</a></li>
+							<li class="list2"><a href="">妈咪包</a></li>
+						</ul>
+					</li>
+					<li class="list1">
+						<b>人群</b>
+						<ul class="Second">
+							<li class="list2"><a href="">男士</a></li>
+							<li class="list2"><a href="">女士</a></li>
+							<li class="list2"><a href="">儿童</a></li>
+						</ul>
+					</li>
+					<li class="list1">
+						<b>款式</b>
+						<ul class="Second"  id="listScroll" >
+							<li class="list2"><a href="">斜跨包</a></li>
+							<li class="list2"><a href="">单肩包</a></li>
+							<li class="list2"><a href="">双肩包</a></li>
+							<li class="list2"><a href="">单肩斜跨包</a></li>
+							<li class="list2"><a href="">手提包</a></li>
+							<li class="list2"><a href="">公文包</a></li>
+							<li class="list2"><a href="">手包</a></li>
+							<li class="list2"><a href="">钱包</a></li>
+							<li class="list2"><a href="">拉杆箱</a></li>
+							<li class="list2"><a href="">登山包</a></li>
+							<li class="list2"><a href="">胸包/腰包</a></li>
+							<li class="list2"><a href="">旅行袋</a></li>
+							<li class="list2"><a href="">户外包</a></li>
+							<li class="list2"><a href="">妈咪包</a></li>
+							<li class="list2"><a href="">儿童包</a></li>
+							<li class="list2"><a href="">皮带</a></li>
+							<li class="list2"><a href="">书包</a></li>
+							<li class="list2"><a href="">其他</a></li>
+						</ul>
+					</li>
+					<li class="list1">
+						<b>女包品牌</b>
+						<ul class="Second" style="display: none;">
+							<li class="list2"><a href="">Z&D</a></li>
+							<li class="list2"><a href="">浪美</a></li>
+							<li class="list2"><a href="">阿尔法.阿迪斯特</a></li>
+							<li class="list2"><a href="">maiBig</a></li>
+							<li class="list2"><a href="">LV</a></li>
+							<li class="list2"><a href="">CHINEL</a></li>
+						</ul>
+					</li>
+					<li class="list1"><b>男包品牌</b></li>
+					<li class="list1"><b>海外品牌</b></li>
+					<li class="list1"><b>运动包品牌</b></li>
+					<li class="list1"><b>旅行箱包品牌</b></li>
+					<li class="list1"><b>亲子包品牌</b></li>
+					<li class="list1"><b>材质</b></li>
+					<li class="list1"><b>价格</b></li>
+					<li class="list1"><b>流行元素</b></li>
+					<li class="list1"><b>颜色</b></li>
+				</ul>
+			</aside>
+			<!-----------右侧商品列表-------------------->
+			<div id="main_right"> 
+				<p>
+					<b>您的筛选条件：</b>
+					<a href="">x 全部重置</a>
+				</p>
+				<p>
+					<span>排序方式：</span>
+					<a href="" style="color:#b30004;"><b>默认</b></a>
+					<a href=""><b>最热销      ↑</b></a>
+					<a href=""><b>最新上架     ↑</b></a>
+					<a href=""><b>价格       ↓</b></a>
+				</p>
+				<ul id="goodsBox">
+					<!--<li>
+						<img src="img/01_002.jpg" alt="" />
+						<a href="">双面花扣系列手提单肩斜</a><br />
+						<b>￥180</b><b>￥300</b>
+					</li>-->
+					
+				</ul>
+			</div>
+		</div>
+		<!-----------bottom--------------->
+		<div id="bottom">
+			<div id="bottom_inner">
+				<div class="bto_left">
+				<p>把Z&D装进口袋带回家</p>
+				<dl>
+					<dt><img src="img/pone_code.jpg" alt="" /></dt>
+					<dd>手机版</dd>
+				</dl>
+				<dl>
+					<dt><img src="img/wei_code.jpg" alt="" /></dt>
+					<dd>微信版</dd>
+				</dl>
+				</div>
+				<ul class="bto_right">
+					<li style="width:95px;border-right:0;">关注Z&D</li>
+					<li><a href=""><img src="img/weixin_p.jpg"/></a></li>
+					<li><a href=""><img src="img/web_p.jpg"/></a></li>
+					<li style="border-right:0;"><a href=""><img src="img/weibo_p.jpg"/></a></li>
+				</ul>
+				<ul class="bto_b">
+					<li><a href=""><span></span>每周上新</a></li>
+					<li><a href=""><span></span>品质保证</a></li>
+					<li><a href=""><span></span>10天无条件退换</a></li>
+					<li><a href=""style="border-right:0;"><span></span>7天价格保护</a></li>
+				</ul>
+			</div>
+		</div>
+		<!------------------footer-------------->
+		<footer>
+			<div>
+				<ul>
+						<li style="padding-left: 42px;" ><a   href="">关于麦包包</a><br /><a href="">友情链接</a></li>
+						<li>
+							<a href="">新手课堂</a><br />
+							<a href="">新用户注册</a><br />
+							<a href="">如何购买</a><br />
+						</li>
+						<li>
+							<a href="">支付方式</a><br />
+							<a href="">支付制度</a><br />
+						</li>
+						<li>
+							<a href="">配送方式</a><br />
+							<a href="">配送运费及时效</a><br />
+						</li>
+						<li>
+							<a href="">售后服务</a><br />
+							<a href="">退换货政策及办理</a><br />
+							<a href="">自助退换货</a><br />
+							<a href="">订单跟踪</a><br />
+						</li>
+						<li>
+							<a href="">帮助中心</a><br />
+							<a href="">找回密码</a><br />
+							<a href="">常见问题</a><br />
+							<a href="">意见反馈</a><br />
+						</li>
+						<li style="border-right:0;padding-left: 42px;">
+							<span>服务热线</span><br />
+							<span>400-8888-2222</span><br />
+							<a id="hotCall" href=""><span>&#xe630;</span>在线客服</a>
+						</li>
+				</ul>
+				<p>&copy;2017-10-27 Z&D All Rights Served.陕西省西安市雁塔区高新六路科技四路立人科技C座.经营许可证编号：<a href="">经营许可证编号：1111111111</a></p>
+				<p>
+					<a href="">服务条款</a>
+					<a href="">网站制度</a>
+					<img src="img/foot_1.jpg"/>
+					<img src="img/foot_2.jpg"/>
+					<img src="img/foot_3.jpg"/>
+					<img src="img/foot_4.jpg"/>
+					<img src="img/foot_1.jpg"/>
+					<a href="">网站导航</a>
+				</p>
+			</div>
+		</footer>
+		<ul class="foot_right">
+			<li class="f_r" style="display:none;"><i></i><span>回到顶部</span></li>
+			<li><a href=""><i></i><span>在线服务</span></a></li>
+			<li><a href=""><i></i><span>去购物车</span></a></li>
+			<li class="fourth">
+				<a href=""><i></i><span>二维码</span></a>
+				<p id="weiCode"><img src="img/ewm_02.png" alt="" /></p>
+			</li>
+			
+		</ul>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/goodslist.js"></script>
+<script type="text/javascript" src="js/cookietools.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		url: 'php/getGoodsList.php',
+		type: 'get',
+		data: {},
+		success:function(data) {
+			var da = eval(data);
+			//console.log(typeof(da));
+	        var str = " ";
+	        for (var i = da.length - 1; i >= 0; i--) {
+	        str+= '<li class="buy">'+
+			'<img src="'+da[i].goodsImg+'" alt="" />'+
+			'<a href="javascript:;" class="buy" goodsid="'+da[i].goodsId+'" >'+da[i].goodsName+'</a><br/>'+
+			'<b>￥'+da[i].goodsPrice+'</b><b>￥'+da[i].beiyong1+'</b>'+
+			'</li>';
+	        }
+	        $("#goodsBox").html(str)
+		},
+		fail:function() {
+		console.log("error");
+		}
+	});
+    //事件委托
+    $("#goodsBox").on("click",".buy",function(){
+    	addCookie("goodid",$(this).attr("goodsid"),1)
+    	location.href="goodsDetails.html";
+    })
+    //用户保存cookie
+    //欢迎***
+			var sss=getCookie("userNum");
+			$("#user").html(sss);
+			$("#dele").click(function(){
+				removeCookie("userNum");
+			})
+})
+	
+</script>

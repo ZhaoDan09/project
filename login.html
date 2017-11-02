@@ -21,19 +21,20 @@
 		<div id="main">
 			<img class="main_left" src="img/login.jpg" alt="" />
 			<div class="main_right">
-				<form action="">
+				<form>
 					<p>
 						<b>用户登录</b>
 						<a href="">立即注册</a>
 						<span>现在还不是Z&D会员?</span>
 					</p>
+					<span id="userMsg" style="color:red;line-height:30px;"></span>
 					<div class="userName">
-						<label for="userNameId">用户名：</label>
-						<input type="text" id="userNameId"/>
+						<label for="userNum">用户名：</label>
+						<input type="text" id="userNum"/>
 					</div>
 					<div class="userPass">
-						<label for="userPassId">登录密码：</label>
-						<input type="password" id="userPassId"/><a href="">忘记密码?</a>
+						<label for="passWord">登录密码：</label>
+						<input type="password" id="passWord"/><a href="">忘记密码?</a>
 					</div>
 					
 						<input type="button" id="goId" value="马上登录    >"/>
@@ -57,3 +58,6 @@
 		</footer>
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/cookietools.js"></script>
